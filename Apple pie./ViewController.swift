@@ -16,9 +16,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //MARK: - Properties
     var currentGame: Game!
-    var totalWins = 0
-    var totalLosses = 0
+    var totalWins = 0 {
+        didSet {
+            newRound()
+        }
+    }
+    var totalLosses = 0 {
+        didSet {
+            newRound()
+        }
+    }
     var incorrectMovesAllowed = 7
     var listOfTowers = ["Амстердам",
                     "Андорра-ла-Велья",
@@ -218,15 +227,27 @@ class ViewController: UIViewController {
                     "Порт-Вила",
                     "Сува",
                     "Фунафути",
-                    "Хониара"]
+                    "Хониара"
+    ].shuffled()
 
     //MARK: - Method
+    func enableButton(_ enable: Bool = true) {
+        for button in letterButtons {
+            button.isEnabled = enable
+        }
+    }
     
     func newRound() {
+        guard !listOfTowers.isEmpty else {
+            enableButton(false)
+            updateUI()
+            return
+        }
         let newWord = listOfTowers.removeFirst()
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
         updateUI()
-    } 
+        enableButton()
+    }
     
     func updateCorrectWordLabel() {
         var displayWord = [String]()
@@ -234,7 +255,17 @@ class ViewController: UIViewController {
             displayWord.append(String(letter))
         }
         correctWordLabel.text = displayWord.joined(separator: " ")
-    } 
+    }
+    
+    func updateState() {
+        if currentGame.incorrectMovesRemaining < 1 {
+            totalLosses += 1
+        } else if currentGame.guessedWord == currentGame.word {
+            totalWins += 1
+        } else {
+            updateUI()
+        }
+    }
     
     func updateUI() {
         let imageNumber = (currentGame.incorrectMovesRemaining + 64) % 8
@@ -255,6 +286,6 @@ class ViewController: UIViewController {
         sender.isEnabled = false
         let letter = sender.title(for: .normal)!
         currentGame.playerGuessed(letter: Character(letter))
-        updateUI()
+        updateState()
     }
 }
