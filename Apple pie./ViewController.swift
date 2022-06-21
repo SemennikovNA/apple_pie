@@ -226,7 +226,7 @@ class ViewController: UIViewController {
         let newWord = listOfTowers.removeFirst()
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
         updateUI()
-    }
+    } 
     
     func updateUI() {
         let imageNumber = (currentGame.incorrectMovesRemaining + 64) % 8
@@ -245,8 +245,7 @@ class ViewController: UIViewController {
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letter = sender.title(for: .normal)!
-        print(letter)
+        currentGame.playerGuessed(letter: Character(letter))
+        updateUI()
     }
-    
-
 }
