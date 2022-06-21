@@ -228,10 +228,19 @@ class ViewController: UIViewController {
         updateUI()
     } 
     
+    func updateCorrectWordLabel() {
+        var displayWord = [String]()
+        for letter in currentGame.guessedWord {
+            displayWord.append(String(letter))
+        }
+        correctWordLabel.text = displayWord.joined(separator: " ")
+    } 
+    
     func updateUI() {
         let imageNumber = (currentGame.incorrectMovesRemaining + 64) % 8
         let image = "Tree\(imageNumber)"
         treeImageVIew.image = UIImage(named: image)
+        updateCorrectWordLabel()
         scoreLabel.text = "Выигрыши: \(totalWins) Проигрыши: \(totalLosses)"
     }
     
