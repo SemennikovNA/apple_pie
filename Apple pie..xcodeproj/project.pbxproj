@@ -14,6 +14,8 @@
 		11853AA628622D9300E82DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11853AA528622D9300E82DAA /* Assets.xcassets */; };
 		11853AA928622D9300E82DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11853AA728622D9300E82DAA /* LaunchScreen.storyboard */; };
 		11853AB128623C5500E82DAA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11853AB028623C5500E82DAA /* Game.swift */; };
+		11853AB5286256F200E82DAA /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 11853AB3286256F200E82DAA /* Screenshot01.png */; };
+		11853AB6286256F200E82DAA /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 11853AB4286256F200E82DAA /* Screenshot02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		11853AA828622D9300E82DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11853AAA28622D9300E82DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11853AB028623C5500E82DAA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		11853AB3286256F200E82DAA /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		11853AB4286256F200E82DAA /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,26 @@
 		11853A9B28622D9000E82DAA /* Apple pie. */ = {
 			isa = PBXGroup;
 			children = (
+				11853AB22862569C00E82DAA /* Screenshots */,
 				11853A9C28622D9000E82DAA /* AppDelegate.swift */,
 				11853A9E28622D9000E82DAA /* SceneDelegate.swift */,
 				11853AA028622D9000E82DAA /* ViewController.swift */,
 				11853AB028623C5500E82DAA /* Game.swift */,
 				11853AA228622D9000E82DAA /* Main.storyboard */,
-				11853AA528622D9300E82DAA /* Assets.xcassets */,
 				11853AA728622D9300E82DAA /* LaunchScreen.storyboard */,
 				11853AAA28622D9300E82DAA /* Info.plist */,
+				11853AA528622D9300E82DAA /* Assets.xcassets */,
 			);
 			path = "Apple pie.";
+			sourceTree = "<group>";
+		};
+		11853AB22862569C00E82DAA /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				11853AB3286256F200E82DAA /* Screenshot01.png */,
+				11853AB4286256F200E82DAA /* Screenshot02.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +144,8 @@
 			files = (
 				11853AA928622D9300E82DAA /* LaunchScreen.storyboard in Resources */,
 				11853AA628622D9300E82DAA /* Assets.xcassets in Resources */,
+				11853AB5286256F200E82DAA /* Screenshot01.png in Resources */,
+				11853AB6286256F200E82DAA /* Screenshot02.png in Resources */,
 				11853AA428622D9000E82DAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

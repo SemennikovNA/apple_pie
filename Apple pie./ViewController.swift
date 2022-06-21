@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     //MARK: - IBOutlet
-    
     @IBOutlet weak var treeImageVIew: UIImageView!
     @IBOutlet var letterButtons: [UIButton]!
     @IBOutlet weak var correctWordLabel: UILabel!
@@ -281,7 +280,6 @@ class ViewController: UIViewController {
     }
 
     //MARK: - IBAction
-    
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letter = sender.title(for: .normal)!
