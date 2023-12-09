@@ -1,6 +1,5 @@
 # Apple pie.
-
-Apple pie project for Moscow Digital Academy
+## Small game 
 
 ## Screenshots
 
